@@ -19,4 +19,14 @@ public interface Visitor {
 	public void visitar(IfThenElse exp);
 	public void visitar(AplicacaoFuncao exp);
 	public void visitar(Identificador exp);
+	public void visitar(ExpressaoGT exp);
+	public void visitar(ExpressaoGTE exp);
+	public void visitar(ExpressaoLT exp);
+	public void visitar(ExpressaoLTE exp);
+	public void visitar(ExpressaoEqual exp);
+	public void visitar(ExpressaoAND exp);
+	public void visitar(ExpressaoOR exp);
+	public void visitar(ExpressaoNOT exp);
+
+
 }

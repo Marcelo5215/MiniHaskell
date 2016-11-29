@@ -72,4 +72,67 @@ public class TamanhoDasExpressoes implements Visitor {
 		tamanho += 1;
 	}
 
+	@Override
+	public void visitar(ExpressaoGT exp) {
+		exp.expEsquerda.aceitar(this);
+		exp.expDireita.aceitar(this);
+		tamanho += 1;	
+		
+	}
+
+	@Override
+	public void visitar(ExpressaoGTE exp) {
+		exp.expEsquerda.aceitar(this);
+		exp.expDireita.aceitar(this);
+		tamanho += 1;	
+		
+	}
+
+	@Override
+	public void visitar(ExpressaoLT exp) {
+		exp.expEsquerda.aceitar(this);
+		exp.expDireita.aceitar(this);
+		tamanho += 1;	
+		
+	}
+
+	@Override
+	public void visitar(ExpressaoLTE exp) {
+		exp.expEsquerda.aceitar(this);
+		exp.expDireita.aceitar(this);
+		tamanho += 1;	
+		
+	}
+
+	@Override
+	public void visitar(ExpressaoEqual exp) {
+		exp.expEsquerda.aceitar(this);
+		exp.expDireita.aceitar(this);
+		tamanho += 1;	
+		
+	}
+
+	@Override
+	public void visitar(ExpressaoAND exp) {
+		exp.expEsquerda.aceitar(this);
+		exp.expDireita.aceitar(this);
+		tamanho += 1;	
+		
+	}
+
+	@Override
+	public void visitar(ExpressaoOR exp) {
+		exp.expEsquerda.aceitar(this);
+		exp.expDireita.aceitar(this);
+		tamanho += 1;	
+		
+	}
+
+	@Override
+	public void visitar(ExpressaoNOT exp) {
+		exp.expUnica.aceitar(this);
+		tamanho += 1;	
+		
+	}
+
 }

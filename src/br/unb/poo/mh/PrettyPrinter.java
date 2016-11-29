@@ -87,4 +87,74 @@ public class PrettyPrinter implements Visitor{
 		System.out.println(exp.id);
 	}
 
+	@Override
+	public void visitar(ExpressaoGT exp) {
+		System.out.print("(");
+		exp.expEsquerda.aceitar(this);
+		System.out.print(">");
+		exp.expDireita.aceitar(this);
+		System.out.print(")");		
+	}
+
+	@Override
+	public void visitar(ExpressaoGTE exp) {
+		System.out.print("(");
+		exp.expEsquerda.aceitar(this);
+		System.out.print(">=");
+		exp.expDireita.aceitar(this);
+		System.out.print(")");		
+	}
+
+	@Override
+	public void visitar(ExpressaoLT exp) {
+		System.out.print("(");
+		exp.expEsquerda.aceitar(this);
+		System.out.print("<");
+		exp.expDireita.aceitar(this);
+		System.out.print(")");		
+	}
+
+	@Override
+	public void visitar(ExpressaoLTE exp) {
+		System.out.print("(");
+		exp.expEsquerda.aceitar(this);
+		System.out.print("<=");
+		exp.expDireita.aceitar(this);
+		System.out.print(")");		
+	}
+
+	@Override
+	public void visitar(ExpressaoEqual exp) {
+		System.out.print("(");
+		exp.expEsquerda.aceitar(this);
+		System.out.print("==");
+		exp.expDireita.aceitar(this);
+		System.out.print(")");		
+	}
+
+	@Override
+	public void visitar(ExpressaoAND exp) {
+		System.out.print("(");
+		exp.expEsquerda.aceitar(this);
+		System.out.print("&&");
+		exp.expDireita.aceitar(this);
+		System.out.print(")");		
+	}
+
+	@Override
+	public void visitar(ExpressaoOR exp) {
+		System.out.print("(");
+		exp.expEsquerda.aceitar(this);
+		System.out.print("||");
+		exp.expDireita.aceitar(this);
+		System.out.print(")");		
+	}
+
+	@Override
+	public void visitar(ExpressaoNOT exp) {
+		System.out.print("not(");
+		exp.expUnica.aceitar(this);
+		System.out.print(")");		
+	}
+
 }
