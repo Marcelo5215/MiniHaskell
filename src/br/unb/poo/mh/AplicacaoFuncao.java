@@ -20,13 +20,14 @@ public class AplicacaoFuncao implements Expressao {
 
 	@Override
 	public Valor avaliar() {
+	
 		DeclaracaoFuncao dec = Ambiente.instance().
 				getDeclaracaoFuncao(nome, parametros.size());
 		
 		Ambiente.instance().empilha();
 		
 		for(int i = 0; i < dec.getArgs().size(); i++) {
-			String arg = dec.getArgs().get(i);
+			String arg = dec.getArgs().get(i).getNome();
 			Expressao pmt = parametros.get(i);
 			
 			Ambiente.instance().associaExpressao(arg, pmt);
@@ -44,9 +45,23 @@ public class AplicacaoFuncao implements Expressao {
 
 	@Override
 	public void aceitar(Visitor v) {
-		v.visitar(this);
-		
+		v.visitar(this);	
 	}
+	
+	//Checagem de tipo
+	public boolean checaArgumentos() {
+		DeclaracaoFuncao dec = Ambiente.instance().
+				getDeclaracaoFuncao(nome, parametros.size());
+				
+		for(int i = 0; i < dec.getArgs().size(); i++) {
+			
+			if(!dec.getArgs().get(i).getTipo().equals(parametros.get(i).tipo())) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
 	
 	
 	

@@ -9,12 +9,14 @@ import org.junit.Test;
 
 import br.unb.poo.mh.Ambiente;
 import br.unb.poo.mh.AplicacaoFuncao;
+import br.unb.poo.mh.ArgumentoDeFuncao;
 import br.unb.poo.mh.DeclaracaoFuncao;
 import br.unb.poo.mh.Expressao;
 import br.unb.poo.mh.ExpressaoSoma;
 import br.unb.poo.mh.Identificador;
 import br.unb.poo.mh.PrettyPrinter;
 import br.unb.poo.mh.TamanhoDasExpressoes;
+import br.unb.poo.mh.Tipo;
 import br.unb.poo.mh.ValorInteiro;
 
 public class TesteAplicacaoFuncao {
@@ -23,9 +25,12 @@ public class TesteAplicacaoFuncao {
 	
 	@Before
 	public void setUp() {
-		List<String> args = new ArrayList<>();
-		args.add("x");
-		args.add("y");
+		List<ArgumentoDeFuncao> args = new ArrayList<>();
+		ArgumentoDeFuncao x = new ArgumentoDeFuncao("x", Tipo.Inteiro);
+		ArgumentoDeFuncao y = new ArgumentoDeFuncao("y", Tipo.Inteiro);
+
+		args.add(x);
+		args.add(y);
 		Expressao corpo = new ExpressaoSoma(new Identificador("x"), 
 				new Identificador("y"));
 		
@@ -50,5 +55,17 @@ public class TesteAplicacaoFuncao {
 		aplicaSoma.aceitar(pp);
 		aplicaSoma.aceitar(t);
 		System.out.println(t.getTamanho());
+		
+	}
+	
+	@Test
+	public void checagemDeTipo() {
+		List<Expressao> parametros = new ArrayList<>();
+		parametros.add(new ValorInteiro(3));
+		parametros.add(new ExpressaoSoma(new ValorInteiro(4), new ValorInteiro(5)));
+		
+		AplicacaoFuncao aplicaSoma = new AplicacaoFuncao("soma", parametros);
+		Assert.assertEquals(true, aplicaSoma.checaArgumentos());
+		
 	}
 }
