@@ -11,7 +11,7 @@ public class ExpressaoGTE extends ExpressaoBinaria {
 		ValorInteiro ve = (ValorInteiro)expEsquerda.avaliar();
 		ValorInteiro vd = (ValorInteiro)expDireita.avaliar();
 		
-		return new ValorBooleano(ve.getValor() > vd.getValor());
+		return new ValorBooleano(ve.getValor() >= vd.getValor());
 	}
 
 	@Override
