@@ -2,8 +2,11 @@ package br.unb.poo.mh;
 
 public class ExpressaoSubtracao extends ExpressaoBinaria {
 
-	public ExpressaoSubtracao(Expressao expDireita, Expressao expEsquerda) {
+	
+
+	public ExpressaoSubtracao(Expressao expEsquerda, Expressao expDireita) {
 		super(expEsquerda, expDireita);
+		// TODO Auto-generated constructor stub
 	}
 
 	@Override

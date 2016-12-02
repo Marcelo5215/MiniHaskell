@@ -2,8 +2,10 @@ package br.unb.poo.mh;
 
 public class ExpressaoEqual extends ExpressaoBinaria{
 
-	public ExpressaoEqual(Expressao expDireita, Expressao expEsquerda) {
-		super(expDireita, expEsquerda);
+	
+	public ExpressaoEqual(Expressao expEsquerda, Expressao expDireita) {
+		super(expEsquerda, expDireita);
+		// TODO Auto-generated constructor stub
 	}
 
 	@Override
