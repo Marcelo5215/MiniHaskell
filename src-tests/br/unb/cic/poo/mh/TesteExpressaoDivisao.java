@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import br.unb.poo.mh.Expressao;
 import br.unb.poo.mh.ExpressaoDivisao;
+import br.unb.poo.mh.Tipo;
 import br.unb.poo.mh.ValorInteiro;
 
 public class TesteExpressaoDivisao {
@@ -25,6 +26,11 @@ public class TesteExpressaoDivisao {
 	public void testeDivisaoComplexa() {
 		Expressao div2 = new ExpressaoDivisao(v24, div);
 		Assert.assertEquals(v2, div2.avaliar());
+	}
+	
+	@Test
+	public void testeTipo() {
+		Assert.assertEquals(Tipo.Inteiro, div.tipo());
 	}
 	
 }

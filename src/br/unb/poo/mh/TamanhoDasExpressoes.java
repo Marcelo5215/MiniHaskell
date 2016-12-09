@@ -16,10 +16,6 @@ public class TamanhoDasExpressoes implements Visitor {
 	public void visitar(ValorBooleano exp) {
 		tamanho += 1;
 	}
-	
-	public void visitar(ValorDecimal exp) {
-		tamanho += 1;
-	}
 
 	@Override
 	public void visitar(ExpressaoSoma exp) {
@@ -93,7 +89,6 @@ public class TamanhoDasExpressoes implements Visitor {
 		exp.expEsquerda.aceitar(this);
 		exp.expDireita.aceitar(this);
 		tamanho += 1;	
-		
 	}
 
 	@Override
@@ -134,5 +129,17 @@ public class TamanhoDasExpressoes implements Visitor {
 		tamanho += 1;	
 		
 	}
+	
+	@Override
+	public void visitar(ExpressaoLet exp) {
+		exp.getCorpo().aceitar(this);
+		tamanho += 1;	
+	}
+	
+	@Override
+	public void visitar(ExpressaoREF exp) {
+		tamanho += 1;	
+	}
+
 
 }

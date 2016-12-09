@@ -3,7 +3,7 @@ package br.unb.poo.mh;
 public class ExpressaoLTE extends ExpressaoBinaria {
 
 	public ExpressaoLTE(Expressao expDireita, Expressao expEsquerda) {
-		super(expDireita, expEsquerda);
+		super(expEsquerda, expDireita);
 	}
 
 	@Override
@@ -11,7 +11,7 @@ public class ExpressaoLTE extends ExpressaoBinaria {
 		ValorInteiro ve = (ValorInteiro)expEsquerda.avaliar();
 		ValorInteiro vd = (ValorInteiro)expDireita.avaliar();
 		
-		return new ValorBooleano(ve.getValor() < vd.getValor());
+		return new ValorBooleano(ve.getValor() <= vd.getValor());
 	}
 
 	@Override

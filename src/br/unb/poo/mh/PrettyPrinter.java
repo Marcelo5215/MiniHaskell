@@ -13,11 +13,6 @@ public class PrettyPrinter implements Visitor{
 	}
 	
 	@Override
-	public void visitar(ValorDecimal exp) {
-		System.out.print(exp.getValor());
-	}
-
-	@Override
 	public void visitar(ExpressaoSoma exp) {
 		System.out.print("(");
 		exp.expEsquerda.aceitar(this);
@@ -157,4 +152,19 @@ public class PrettyPrinter implements Visitor{
 		System.out.print(")");		
 	}
 
+	@Override
+	public void visitar(ExpressaoLet exp) {
+		System.out.print("let = ");
+		exp.getDef().aceitar(this);
+		System.out.print("in ");
+		exp.getCorpo().aceitar(this);
+	}
+	
+	@Override
+	public void visitar(ExpressaoREF exp) {
+		System.out.print(exp.getID());
+		System.out.print(" = ");
+		exp.avaliar().aceitar(this);
+	}
+	
 }

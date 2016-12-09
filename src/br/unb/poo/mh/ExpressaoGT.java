@@ -3,7 +3,7 @@ package br.unb.poo.mh;
 public class ExpressaoGT extends ExpressaoBinaria {
 	
 	public ExpressaoGT(Expressao expDireita, Expressao expEsquerda) {
-		super(expDireita, expEsquerda);
+		super(expEsquerda, expDireita);
 	}
 
 	@Override

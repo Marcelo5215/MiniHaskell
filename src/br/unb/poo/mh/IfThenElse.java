@@ -16,12 +16,16 @@ public class IfThenElse implements Expressao {
 		if(valor.getValor()) {
 			return clausulaThen.avaliar();
 		}
-		return 			clausulaElse.avaliar();
+		return 	clausulaElse.avaliar();
 	}
 
 	@Override
 	public Tipo tipo() {
-		return Tipo.Error;
+		ValorBooleano valor = (ValorBooleano)condicao.avaliar();
+		if(valor.getValor()) {
+			return clausulaThen.tipo();
+		}
+		return 	clausulaElse.tipo();
 	}
 
 	@Override
