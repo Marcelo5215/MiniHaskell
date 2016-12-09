@@ -53,6 +53,18 @@ public class TamanhoDasExpressoes implements Visitor {
 		tamanho += 1;
 	}
 
+	@SuppressWarnings("rawtypes")
+	@Override
+	public void visitar(ValorListaVazia exp) {
+		tamanho += 0;
+	}
+
+	@SuppressWarnings("rawtypes")
+	@Override
+	public void visitar(ValorListaNVazia exp) {
+		tamanho += exp.getTamanho();
+	}
+	
 	@Override
 	public void visitar(AplicacaoFuncao exp) {
 		exp.parametros.stream().forEach(p -> { p.aceitar(this); });

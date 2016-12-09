@@ -12,11 +12,6 @@ public class ValorListaVazia<T extends Valor> extends ValorLista<T>{
 	}
 
 	@Override
-	public boolean checarTipo() {
-		return true;
-	}
-
-	@Override
 	public Valor avaliar() {
 		return this;
 	}

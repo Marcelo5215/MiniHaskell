@@ -28,6 +28,8 @@ public interface Visitor {
 	public void visitar(ExpressaoNOT exp);
 	public void visitar(ExpressaoLet exp);
 	public void visitar(ExpressaoREF exp);
+	public void visitar(ValorListaVazia exp);
+	public void visitar(ValorListaNVazia exp);
 
 
 }

@@ -167,4 +167,16 @@ public class PrettyPrinter implements Visitor{
 		exp.avaliar().aceitar(this);
 	}
 	
+	@Override
+	public void visitar(ValorListaVazia exp) {
+		System.out.print("[]");
+	}
+
+	@Override
+	public void visitar(ValorListaNVazia exp) {
+		System.out.print("[");
+		System.out.print(exp.getValor());
+		System.out.print("]");
+	}
+	
 }
