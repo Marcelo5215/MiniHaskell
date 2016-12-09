@@ -4,7 +4,8 @@ public abstract class ExpressaoBinaria implements Expressao {
 	protected Expressao expDireita;
 	protected Expressao expEsquerda; 
 	
-	public ExpressaoBinaria(Expressao expDireita, Expressao expEsquerda) {
+	//Invertido a ordem dos argumentos
+	public ExpressaoBinaria(Expressao expEsquerda, Expressao expDireita) {
 		this.expDireita = expDireita;
 		this.expEsquerda = expEsquerda;
 	}

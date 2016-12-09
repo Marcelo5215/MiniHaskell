@@ -1,8 +1,8 @@
 package br.unb.poo.mh;
 
 public class ExpressaoGT extends ExpressaoBinaria {
-	
-	public ExpressaoGT(Expressao expDireita, Expressao expEsquerda) {
+
+	public ExpressaoGT(Expressao expEsquerda, Expressao expDireita) {
 		super(expEsquerda, expDireita);
 	}
 
@@ -10,8 +10,8 @@ public class ExpressaoGT extends ExpressaoBinaria {
 	public Valor avaliar() {
 		ValorInteiro ve = (ValorInteiro)expEsquerda.avaliar();
 		ValorInteiro vd = (ValorInteiro)expDireita.avaliar();
-		
-		return new ValorBooleano(ve.getValor() > vd.getValor());
+		Boolean temp = ve.getValor() > vd.getValor();
+		return new ValorBooleano(temp);
 	}
 
 	@Override

@@ -2,8 +2,10 @@ package br.unb.poo.mh;
 
 public class ExpressaoEqual extends ExpressaoBinaria{
 
+
 	public ExpressaoEqual(Expressao expDireita, Expressao expEsquerda) {
 		super(expEsquerda, expDireita);
+
 	}
 
 	@Override

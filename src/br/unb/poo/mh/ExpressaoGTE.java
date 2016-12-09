@@ -2,8 +2,8 @@ package br.unb.poo.mh;
 
 public class ExpressaoGTE extends ExpressaoBinaria {
 	
-	public ExpressaoGTE(Expressao expDireita, Expressao expEsquerda) {
-		super( expEsquerda, expDireita);
+	public ExpressaoGTE(Expressao expEsquerda, Expressao expDireita) {
+		super(expEsquerda, expDireita);
 	}
 
 	@Override
