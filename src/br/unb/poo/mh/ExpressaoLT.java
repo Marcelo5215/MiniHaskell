@@ -2,11 +2,8 @@ package br.unb.poo.mh;
 
 public class ExpressaoLT extends ExpressaoBinaria {
 
-	
-
 	public ExpressaoLT(Expressao expEsquerda, Expressao expDireita) {
 		super(expEsquerda, expDireita);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override

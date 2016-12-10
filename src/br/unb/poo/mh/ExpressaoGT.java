@@ -4,7 +4,6 @@ public class ExpressaoGT extends ExpressaoBinaria {
 
 	public ExpressaoGT(Expressao expEsquerda, Expressao expDireita) {
 		super(expEsquerda, expDireita);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override

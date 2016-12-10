@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import br.unb.poo.mh.Expressao;
 import br.unb.poo.mh.ExpressaoSubtracao;
+import br.unb.poo.mh.Tipo;
 import br.unb.poo.mh.ValorInteiro;
 
 public class TesteExpressaoSubtracao {
@@ -27,4 +28,9 @@ public class TesteExpressaoSubtracao {
 		Assert.assertEquals(v2, subtracao2.avaliar());
 	}
 	
+	
+	@Test
+	public void testeTipo() {
+		Assert.assertEquals(Tipo.Inteiro, subtracao.tipo());
+	}
 }

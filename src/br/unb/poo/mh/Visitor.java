@@ -11,7 +11,6 @@ package br.unb.poo.mh;
 public interface Visitor {
 	public void visitar(ValorInteiro exp);
 	public void visitar(ValorBooleano exp);
-	public void visitar(ValorDecimal exp);
 	public void visitar(ExpressaoSoma exp);
 	public void visitar(ExpressaoDivisao exp);
 	public void visitar(ExpressaoSubtracao exp);
@@ -27,6 +26,10 @@ public interface Visitor {
 	public void visitar(ExpressaoAND exp);
 	public void visitar(ExpressaoOR exp);
 	public void visitar(ExpressaoNOT exp);
+	public void visitar(ExpressaoLet exp);
+	public void visitar(ExpressaoREF exp);
+	public void visitar(ValorListaVazia exp);
+	public void visitar(ValorListaNVazia exp);
 
 
 }
